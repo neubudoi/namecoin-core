@@ -138,11 +138,11 @@ BOOST_AUTO_TEST_CASE(addrman_ports)
     BOOST_CHECK_EQUAL(addrman.size(), 0);
 
     // Test 7; Addr with same IP but diff port does not replace existing addr.
-    CService addr1 = ResolveService("250.1.1.1", 8333);
+    CService addr1 = ResolveService("250.1.1.1", 8338);
     addrman.Add(CAddress(addr1, NODE_NONE), source);
     BOOST_CHECK_EQUAL(addrman.size(), 1);
 
-    CService addr1_port = ResolveService("250.1.1.1", 8334);
+    CService addr1_port = ResolveService("250.1.1.1", 8338);
     addrman.Add(CAddress(addr1_port, NODE_NONE), source);
     BOOST_CHECK_EQUAL(addrman.size(), 1);
     CAddrInfo addr_ret2 = addrman.Select();
