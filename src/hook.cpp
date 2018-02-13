@@ -78,7 +78,7 @@ int CStandardHooks::LockinHeight()
 
 bool CStandardHooks::Lockin(int nHeight, uint256 hash)
 {
-    if (!fTestNet)
+   /* if (!fTestNet)
         if ((nHeight ==  11111 && hash != uint256("0x0000000069e244f73d78e8fd29ba2fd2ed618bd6fa2ee92559f542fdb26e7c1d")) ||
                 (nHeight ==  33333 && hash != uint256("0x000000002dd5588a74784eaa7ab0507a18ad16a236e7b1ce69f00d7ddfb5d0a6")) ||
                 (nHeight ==  68555 && hash != uint256("0x00000000001e1b4903550a0b96e9a9405c8a95f387162e4944e8d9fbe501cd6a")) ||
@@ -87,7 +87,7 @@ bool CStandardHooks::Lockin(int nHeight, uint256 hash)
                 (nHeight == 105000 && hash != uint256("0x00000000000291ce28027faea320c8d2b054b2e0fe44a773f3eefb151d6bdc97")) ||
                 (nHeight == 118000 && hash != uint256("0x000000000000774a7f8a7a12dc906ddb9e17e75d684f15e00f8767f9e8f36553")) ||
                 (nHeight == 134444 && hash != uint256("0x00000000000005b12ffd4cd315cd34ffd4a594f430ac814c91184a0d42d2b0fe")))
-            return false;
+            return false;*/
     return true;
 }
 
@@ -151,15 +151,20 @@ CHooks* InitHook()
 
 unsigned short GetDefaultPort()
 {
-    return fTestNet ? 18333 : 8333;
+    return fTestNet ? 18339 : 8339;
 }
 
+const char *strDNSSeed[] = {
+    NULL
+};
+
+/*
 const char *strDNSSeed[] = {
     "bitseed.xf2.org",
     "bitseed.bitcoin.org.uk",
     "dnsseed.bluematt.me",
     NULL
-};
+};*/
 
 unsigned int pnSeed[] =
 {

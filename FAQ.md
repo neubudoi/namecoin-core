@@ -38,7 +38,7 @@ Usage
 
 **Q: Can I run Namecoin and Bitcoin on the same machine?**
 
-**A:** This is possible.  The two systems use different port numbers for client to client communication.  You have to choose a different RPC port for one of them, because they both default to 8332.
+**A:** This is possible.  The two systems use different port numbers for client to client communication.  You have to choose a different RPC port for one of them, because they both default to 8338.
 
 **Q: How do I register a name?**
 

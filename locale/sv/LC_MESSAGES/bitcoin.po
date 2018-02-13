@@ -115,8 +115,8 @@ msgid "Password for JSON-RPC connections\n"
 msgstr "Lösenord till JSON-RPC anslutning\n"
 
 #: ../../../init.cpp:176
-msgid "Listen for JSON-RPC connections on <port> (default: 8332)\n"
-msgstr "Lyssnar på JSON-RPC anslutningar på <port> (standard: 8332)\n"
+msgid "Listen for JSON-RPC connections on <port> (default: 8338)\n"
+msgstr "Lyssnar på JSON-RPC anslutningar på <port> (standard: 8338)\n"
 
 #: ../../../init.cpp:177
 msgid "Allow JSON-RPC connections from specified IP address\n"

@@ -430,9 +430,9 @@ def run():
 
     parent_group = parser.add_argument_group('parent chain (bitcoin) interface')
     parent_group.add_argument('-p', '--parent-url', metavar='PARENT_URL',
-                              help='connect to the parent RPC at this address (default: http://un:pw@127.0.0.1:8332/)',
+                              help='connect to the parent RPC at this address (default: http://un:pw@127.0.0.1:8338/)',
                               type=str, action='store',
-                              default='http://un:pw@127.0.0.1:8332/',
+                              default='http://un:pw@127.0.0.1:8338/',
                               dest='parent_url')
 
     aux_group = parser.add_argument_group('aux chain (e.g. namecoin) interface(s)')

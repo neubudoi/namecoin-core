@@ -42,11 +42,11 @@ To enable a synchronized upgrade to a chain, a starting block number can be conf
 How To Example for Bitcoin / Namecoin
 =====================================
 
-This example assumes bitcoin RPC port is 8332 and namecoin is at port 8331.
+This example assumes bitcoin RPC port is 8338 and namecoin is at port 8331.
 
 Compile namecoind and bitcoind with the merged mining patch.  Then run:
 
-  `contrib/merged-mine-proxy -w 8330 -p http://pw:un@127.0.0.1:8332/ -x http://pw:un@127.0.0.1:8331/`
+  `contrib/merged-mine-proxy -w 8330 -p http://pw:un@127.0.0.1:8338/ -x http://pw:un@127.0.0.1:8331/`
 
 This will have the proxy listen at port 8330.  
 
