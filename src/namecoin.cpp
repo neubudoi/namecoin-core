@@ -1708,10 +1708,10 @@ bool GenesisBlock(CBlock& block, int extra)
     block = CBlock();
     block.hashPrevBlock = 0;
     block.nVersion = 1;
-    block.nTime    = 1303000001;
+    block.nTime    = 1518595185;
     block.nBits    = 0x1c007fff;
-    block.nNonce   = 0xa21ea192U;
-    const char* pszTimestamp = "... choose what comes next.  Lives of your own, or a return to chains. -- V";
+    block.nNonce   = 0xb32fc722U;
+    const char* pszTimestamp = "Jeder hat seine Sorgen: Daimler-Chef stört sich an seiner Gehaltsdeckelung von 10 Millionen Euro";
     CTransaction txNew;
     txNew.vin.resize(1);
     txNew.vout.resize(1);
@@ -1746,7 +1746,7 @@ int CNamecoinHooks::LockinHeight()
 
 bool CNamecoinHooks::Lockin(int nHeight, uint256 hash)
 {
-    if (!fTestNet)
+   /* if (!fTestNet)
         if ((nHeight == 2016 && hash != uint256("0x0000000000660bad0d9fbde55ba7ee14ddf766ed5f527e3fbca523ac11460b92")) ||
                 (nHeight ==   4032 && hash != uint256("0x0000000000493b5696ad482deb79da835fe2385304b841beef1938655ddbc411")) ||
                 (nHeight ==   6048 && hash != uint256("0x000000000027939a2e1d8bb63f36c47da858e56d570f143e67e85068943470c9")) ||
@@ -1756,7 +1756,7 @@ bool CNamecoinHooks::Lockin(int nHeight, uint256 hash)
                 (nHeight ==  14112 && hash != uint256("0x00000000000045d95e0588c47c17d593c7b5cb4fb1e56213d1b3843c1773df2b")) ||
                 (nHeight ==  16128 && hash != uint256("0x000000000001d9964f9483f9096cf9d6c6c2886ed1e5dec95ad2aeec3ce72fa9")) ||
                 (nHeight ==  18940 && hash != uint256("0x00000000000087f7fc0c8085217503ba86f796fa4984f7e5a08b6c4c12906c05")))
-            return false;
+            return false; */
     return true;
 }
 
