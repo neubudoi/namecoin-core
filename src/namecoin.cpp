@@ -1723,7 +1723,7 @@ bool GenesisBlock(CBlock& block, int extra)
     printf("====================================\n");
     printf("Merkle: %s\n", block.hashMerkleRoot.GetHex().c_str());
     printf("Block: %s\n", block.GetHash().GetHex().c_str());
-    assert(block.hashMerkleRoot == uint256("0xdb0912195fc3b8bc8b2f47cc43499306884f4411a66adb129b137bc29f053b1a"));            
+    assert(block.hashMerkleRoot == uint256("0x8dcc5834512cfda5efd6dae76589df661003c4f84866ae5c25fd2420632c600f"));            
     block.print();
     assert(block.GetHash() == hashGenesisBlock);
     return true;
