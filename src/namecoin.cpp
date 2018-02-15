@@ -50,7 +50,7 @@ extern bool IsConflictedTx(CTxDB& txdb, const CTransaction& tx, vector<unsigned 
 extern bool GetNameOfTx(const CTransaction& tx, vector<unsigned char>& name);
 
 const int NAME_COIN_GENESIS_EXTRA = 521;
-uint256 hashNameCoinGenesisBlock("43d162da8ffd44d06a0a88fd2d574e5bfbf0eb881d4c343c8ffe0adbeb47762d");
+uint256 hashNameCoinGenesisBlock("0x00000000ebfd71c4c89f252e0bfb5b8ae8ab30bd066084d333536ac30ede389d");
 
 class CNamecoinHooks : public CHooks
 {
@@ -1708,9 +1708,9 @@ bool GenesisBlock(CBlock& block, int extra)
     block = CBlock();
     block.hashPrevBlock = 0;
     block.nVersion = 1;
-    block.nTime    = 1518595185;
+    block.nTime    = 1518676801;
     block.nBits    = 0x1c007fff;
-    block.nNonce   = 0xb32fc722U;
+    block.nNonce   = 0x1719116522;
     const char* pszTimestamp = "Jeder hat seine Sorgen: Daimler-Chef stört sich an seiner Gehaltsdeckelung von 10 Millionen Euro";
     CTransaction txNew;
     txNew.vin.resize(1);
@@ -1723,6 +1723,7 @@ bool GenesisBlock(CBlock& block, int extra)
     printf("====================================\n");
     printf("Merkle: %s\n", block.hashMerkleRoot.GetHex().c_str());
     printf("Block: %s\n", block.GetHash().GetHex().c_str());
+    assert(block.hashMerkleRoot == uint256("0xdb0912195fc3b8bc8b2f47cc43499306884f4411a66adb129b137bc29f053b1a"));            
     block.print();
     assert(block.GetHash() == hashGenesisBlock);
     return true;

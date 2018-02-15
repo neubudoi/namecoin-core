@@ -33,7 +33,8 @@ map<COutPoint, CInPoint> mapNextTx;
 map<uint256, CBlockIndex*> mapBlockIndex;
 //uint256 hashGenesisBlock("0x000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f");
                           //43d162da8ffd44d06a0a88fd2d574e5bfbf0eb881d4c343c8ffe0adbeb47762d
-uint256 hashGenesisBlock("0x43d162da8ffd44d06a0a88fd2d574e5bfbf0eb881d4c343c8ffe0adbeb47762d");
+//00000000ebfd71c4c89f252e0bfb5b8ae8ab30bd066084d333536ac30ede389d
+uint256 hashGenesisBlock("0x00000000ebfd71c4c89f252e0bfb5b8ae8ab30bd066084d333536ac30ede389d");
 
 CBigNum bnProofOfWorkLimit(~uint256(0) >> 32);
 const int nTotalBlocksEstimate = 0; // Conservative estimate of total nr of blocks on main chain
@@ -1555,7 +1556,7 @@ bool LoadBlockIndex(bool fAllowNew)
 {
     if (fTestNet)
     {
-        hashGenesisBlock = uint256("0x00000007199508e34a9ff81e6ec0c477a4cccff2a4767a8eee39c11db367b008");
+        hashGenesisBlock = uint256("0x00000000ebfd71c4c89f252e0bfb5b8ae8ab30bd066084d333536ac30ede389d");
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 28);
         pchMessageStart[0] = 0xfa;
         pchMessageStart[1] = 0xbf;
@@ -1594,16 +1595,16 @@ bool LoadBlockIndex(bool fAllowNew)
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CBigNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-        txNew.vout[0].nValue = 50 * COIN;
-        txNew.vout[0].scriptPubKey = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
+        txNew.vout[0].nValue = 50 * COIN; 
+        txNew.vout[0].scriptPubKey = CScript() << ParseHex("04b620369050cd899ffbbc4e8ee51e8c4534a855bb463439d63d235d4779685d8b6f4870a238cf365ac94fa13ef9a2a22cd99d0d5ee86dcabcafce36c7acf43ce5") << OP_CHECKSIG;
         CBlock block;
         block.vtx.push_back(txNew);
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1518595185;
+        block.nTime    = 1518676801;
         block.nBits    = 0x1c007fff;
-        block.nNonce   = 0xb32fc722U;
+        block.nNonce   = 0x1719116522;
 
         if (fTestNet)
         {
