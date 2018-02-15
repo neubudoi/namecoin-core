@@ -1714,8 +1714,8 @@ bool GenesisBlock(CBlock& block, int extra)
     const char* pszTimestamp = "Jeder hat seine Sorgen: Daimler-Chef stört sich an seiner Gehaltsdeckelung von 10 Millionen Euro";
     CTransaction txNew;
     txNew.vin.resize(1);
-    txNew.vout.resize(1);
-    txNew.vin[0].scriptSig = CScript() << block.nBits << CBigNum(++extra) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
+    txNew.vout.resize(1);  //<< CBigNum(++extra)
+    txNew.vin[0].scriptSig = CScript() << block.nBits  << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
     txNew.vout[0].nValue = 50 * COIN;
     txNew.vout[0].scriptPubKey = CScript() << ParseHex("04b620369050cd899ffbbc4e8ee51e8c4534a855bb463439d63d235d4779685d8b6f4870a238cf365ac94fa13ef9a2a22cd99d0d5ee86dcabcafce36c7acf43ce5") << OP_CHECKSIG;
     block.vtx.push_back(txNew);
@@ -1763,7 +1763,7 @@ bool CNamecoinHooks::Lockin(int nHeight, uint256 hash)
 
 string CNamecoinHooks::IrcPrefix()
 {
-    return "namecoin";
+    return "mailcoin";
 }
 
 unsigned short GetDefaultPort()
