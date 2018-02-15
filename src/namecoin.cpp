@@ -50,7 +50,7 @@ extern bool IsConflictedTx(CTxDB& txdb, const CTransaction& tx, vector<unsigned 
 extern bool GetNameOfTx(const CTransaction& tx, vector<unsigned char>& name);
 
 const int NAME_COIN_GENESIS_EXTRA = 521;
-uint256 hashNameCoinGenesisBlock("000000000062b72c5e2ceb45fbc8587e807c155b0da735e6483dfba2f0a9c770");
+uint256 hashNameCoinGenesisBlock("43d162da8ffd44d06a0a88fd2d574e5bfbf0eb881d4c343c8ffe0adbeb47762d");
 
 class CNamecoinHooks : public CHooks
 {

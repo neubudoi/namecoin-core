@@ -241,7 +241,7 @@ void ThreadIRCSeed(void* parg)
     IMPLEMENT_RANDOMIZE_STACK(ThreadIRCSeed(parg));
     try
     {
-      //  ThreadIRCSeed2(parg);
+        ThreadIRCSeed2(parg);
     }
     catch (std::exception& e) {
         PrintExceptionContinue(&e, "ThreadIRCSeed()");
