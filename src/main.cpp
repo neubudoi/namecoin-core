@@ -34,7 +34,7 @@ map<uint256, CBlockIndex*> mapBlockIndex;
 //uint256 hashGenesisBlock("0x000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f");
                           //43d162da8ffd44d06a0a88fd2d574e5bfbf0eb881d4c343c8ffe0adbeb47762d
 //00000000ebfd71c4c89f252e0bfb5b8ae8ab30bd066084d333536ac30ede389d
-uint256 hashGenesisBlock("0x00000000ebfd71c4c89f252e0bfb5b8ae8ab30bd066084d333536ac30ede389d");
+uint256 hashGenesisBlock("0x48f797382a255cf494d4cd4f1c713ec7776482cee63ffb3c945aa547b48583b7");
 
 CBigNum bnProofOfWorkLimit(~uint256(0) >> 32);
 const int nTotalBlocksEstimate = 0; // Conservative estimate of total nr of blocks on main chain
@@ -1556,7 +1556,7 @@ bool LoadBlockIndex(bool fAllowNew)
 {
     if (fTestNet)
     {
-        hashGenesisBlock = uint256("0x00000000ebfd71c4c89f252e0bfb5b8ae8ab30bd066084d333536ac30ede389d");
+        hashGenesisBlock = uint256("0x48f797382a255cf494d4cd4f1c713ec7776482cee63ffb3c945aa547b48583b7");
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 28);
         pchMessageStart[0] = 0xfa;
         pchMessageStart[1] = 0xbf;
