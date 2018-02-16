@@ -73,7 +73,7 @@ int CStandardHooks::LockinHeight()
     if (fTestNet)
         return 0;
 
-    return 134444;
+    return 0; //134444; // TODO
 }
 
 bool CStandardHooks::Lockin(int nHeight, uint256 hash)

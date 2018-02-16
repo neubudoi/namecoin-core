@@ -31,10 +31,8 @@ unsigned int nTransactionsUpdated = 0;
 map<COutPoint, CInPoint> mapNextTx;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-//uint256 hashGenesisBlock("0x000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f");
-                          //43d162da8ffd44d06a0a88fd2d574e5bfbf0eb881d4c343c8ffe0adbeb47762d
-//00000000ebfd71c4c89f252e0bfb5b8ae8ab30bd066084d333536ac30ede389d
-uint256 hashGenesisBlock("0x48f797382a255cf494d4cd4f1c713ec7776482cee63ffb3c945aa547b48583b7");
+
+uint256 hashGenesisBlock("0x0000000056c5f49192b9ffec14a7152b73a5396b9d54fdc81f4910e3ee2c236c");
 
 CBigNum bnProofOfWorkLimit(~uint256(0) >> 32);
 const int nTotalBlocksEstimate = 0; // Conservative estimate of total nr of blocks on main chain
@@ -1582,6 +1580,22 @@ bool LoadBlockIndex(bool fAllowNew)
         if (!fAllowNew)
             return false;
 
+        /**
+        root@ashtanga:/usr/src/own/genesis-generator# ./gg  0401f721b37aa5f3f03892e75d63908ac584a4caa2433594e5dab420e490cfc6634b8c48d449243e73fa7da698a7ee54114af9eb7a0f2bac4971ba257e69976238 "Jeder hat seine Sorgen: Daimler-Chef stört sich an seiner Gehaltsdeckelung von 10 Millionen Euro" 0x1c007fff
+
+        Coinbase: 01000104614a6564657220686174207365696e6520536f7267656e3a204461696d6c65722d43686566207374c3b67274207369636820616e207365696e657220476568616c74736465636b656c756e6720766f6e203130204d696c6c696f6e656e204575726f
+
+        PubkeyScript: 410401f721b37aa5f3f03892e75d63908ac584a4caa2433594e5dab420e490cfc6634b8c48d449243e73fa7da698a7ee54114af9eb7a0f2bac4971ba257e69976238ac
+
+        Merkle Hash: 1d89f47f1e5b84e8b78ef2f5e38defad5e54d0b08fbc5f17a1ba5b38afb76d7b
+        Byteswapped: 7b6db7af385bbaa1175fbc8fb0d0545eadef8de3f5f28eb7e8845b1e7ff4891d
+        Generating block...
+        1651145 Hashes/s, Nonce 3222439208
+        Block found!
+        Hash: 0000000056c5f49192b9ffec14a7152b73a5396b9d54fdc81f4910e3ee2c236c
+        Nonce: 3223814536
+        */
+
         // Genesis Block:
         // CBlock(hash=000000000019d6, ver=1, hashPrevBlock=00000000000000, hashMerkleRoot=4a5e1e, nTime=1231006505, nBits=1d00ffff, nNonce=2083236893, vtx=1)
         //   CTransaction(hash=4a5e1e, ver=1, vin.size=1, vout.size=1, nLockTime=0)
@@ -1596,7 +1610,7 @@ bool LoadBlockIndex(bool fAllowNew)
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CBigNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew.vout[0].nValue = 50 * COIN; 
-        txNew.vout[0].scriptPubKey = CScript() << ParseHex("04b620369050cd899ffbbc4e8ee51e8c4534a855bb463439d63d235d4779685d8b6f4870a238cf365ac94fa13ef9a2a22cd99d0d5ee86dcabcafce36c7acf43ce5") << OP_CHECKSIG;
+        txNew.vout[0].scriptPubKey = CScript() << ParseHex("0401f721b37aa5f3f03892e75d63908ac584a4caa2433594e5dab420e490cfc6634b8c48d449243e73fa7da698a7ee54114af9eb7a0f2bac4971ba257e69976238") << OP_CHECKSIG;
         CBlock block;
         block.vtx.push_back(txNew);
         block.hashPrevBlock = 0;
@@ -1604,7 +1618,7 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nVersion = 1;
         block.nTime    = 1518676801;
         block.nBits    = 0x1c007fff;
-        block.nNonce   = 0x1719116522;
+        block.nNonce   = 3223814536;
 
         if (fTestNet)
         {
@@ -1619,7 +1633,7 @@ bool LoadBlockIndex(bool fAllowNew)
             printf("%s\n", block.GetHash().ToString().c_str());
             printf("%s\n", hashGenesisBlock.ToString().c_str());
             printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-            assert(block.hashMerkleRoot == uint256("0xc0a8a52b4918044e39a6cd8aa8ba20f21fb373077256c2d37a1fd1aeef36e84b"));
+            assert(block.hashMerkleRoot == uint256("0x1d89f47f1e5b84e8b78ef2f5e38defad5e54d0b08fbc5f17a1ba5b38afb76d7b"));
             block.print();
             assert(block.GetHash() == hashGenesisBlock);
         }
