@@ -50,7 +50,7 @@ extern bool IsConflictedTx(CTxDB& txdb, const CTransaction& tx, vector<unsigned 
 extern bool GetNameOfTx(const CTransaction& tx, vector<unsigned char>& name);
 
 const int NAME_COIN_GENESIS_EXTRA = 521;
-uint256 hashNameCoinGenesisBlock("0x0000000056c5f49192b9ffec14a7152b73a5396b9d54fdc81f4910e3ee2c236c");
+uint256 hashNameCoinGenesisBlock("0x758953c4f3f7f25d007ab42d2972b3cd1cfe7e666cd5b35927d8b3e3da338bcf");
 
 class CNamecoinHooks : public CHooks
 {
@@ -1741,7 +1741,7 @@ bool GenesisBlock(CBlock& block, int extra)
     printf("Block: %s\n", block.GetHash().GetHex().c_str());
     block.print();
     assert(block.GetHash() == hashGenesisBlock);
-    assert(block.hashMerkleRoot == uint256("0x1d89f47f1e5b84e8b78ef2f5e38defad5e54d0b08fbc5f17a1ba5b38afb76d7b"));            
+    assert(block.hashMerkleRoot == uint256("0xad2bd6d26ebc121e0d4258224ef1936fad5f0d13b7100ea1e6da9c053f39e513"));            
     
     return true;
 }
