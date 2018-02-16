@@ -1723,7 +1723,7 @@ bool GenesisBlock(CBlock& block, int extra)
     block = CBlock();
     block.hashPrevBlock = 0;
     block.nVersion = 1;
-    block.nTime    = 1518676801;
+    block.nTime    = 1518766732;
     block.nBits    = 0x1c007fff;
     block.nNonce   = 3223814536;
     const char* pszTimestamp = "Jeder hat seine Sorgen: Daimler-Chef stört sich an seiner Gehaltsdeckelung von 10 Millionen Euro";

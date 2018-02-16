@@ -1616,7 +1616,7 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1518676801;
+        block.nTime    = 1518766732;
         block.nBits    = 0x1c007fff;
         block.nNonce   = 3223814536;
 
