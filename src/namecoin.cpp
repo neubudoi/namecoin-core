@@ -1731,7 +1731,7 @@ bool GenesisBlock(CBlock& block, int extra)
     CTransaction txNew;
     txNew.vin.resize(1);
     txNew.vout.resize(1);  //<< CBigNum(++extra)  block.nBits  CBigNum(4)
-    txNew.vin[0].scriptSig = CScript() << CBigNum(++extra) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
+    txNew.vin[0].scriptSig = CScript() << block.nBits << CBigNum(++extra) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
     txNew.vout[0].nValue = 50 * COIN;
     txNew.vout[0].scriptPubKey = CScript() << ParseHex("0401f721b37aa5f3f03892e75d63908ac584a4caa2433594e5dab420e490cfc6634b8c48d449243e73fa7da698a7ee54114af9eb7a0f2bac4971ba257e69976238") << OP_CHECKSIG;
     block.vtx.push_back(txNew);
@@ -1739,10 +1739,10 @@ bool GenesisBlock(CBlock& block, int extra)
     printf("====================================\n");
     printf("Merkle: %s\n", block.hashMerkleRoot.GetHex().c_str());
     printf("Block: %s\n", block.GetHash().GetHex().c_str());
-    //assert(block.hashMerkleRoot == uint256("0x1d89f47f1e5b84e8b78ef2f5e38defad5e54d0b08fbc5f17a1ba5b38afb76d7b"));            
     block.print();
     assert(block.GetHash() == hashGenesisBlock);
-
+    assert(block.hashMerkleRoot == uint256("0x1d89f47f1e5b84e8b78ef2f5e38defad5e54d0b08fbc5f17a1ba5b38afb76d7b"));            
+    
     return true;
 }
 

@@ -32,7 +32,7 @@ map<COutPoint, CInPoint> mapNextTx;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
 
-uint256 hashGenesisBlock("0x0000000056c5f49192b9ffec14a7152b73a5396b9d54fdc81f4910e3ee2c236c");
+uint256 hashGenesisBlock("0x86c558827060a4ce6b07b371205978732c6b207ff50ad6fcd8bb111aca387c15");
 
 CBigNum bnProofOfWorkLimit(~uint256(0) >> 32);
 const int nTotalBlocksEstimate = 0; // Conservative estimate of total nr of blocks on main chain
