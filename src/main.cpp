@@ -1594,6 +1594,7 @@ bool LoadBlockIndex(bool fAllowNew)
         Block found!
         Hash: 0000000056c5f49192b9ffec14a7152b73a5396b9d54fdc81f4910e3ee2c236c
         Nonce: 3223814536
+        Unix time: 1518766732
         */
 
         // Genesis Block:

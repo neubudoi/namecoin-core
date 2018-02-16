@@ -1717,6 +1717,7 @@ Generating block...
 Block found!
 Hash: 0000000056c5f49192b9ffec14a7152b73a5396b9d54fdc81f4910e3ee2c236c
 Nonce: 3223814536
+Unix time: 1518766732
 */
 bool GenesisBlock(CBlock& block, int extra)
 {
@@ -1730,7 +1731,7 @@ bool GenesisBlock(CBlock& block, int extra)
     CTransaction txNew;
     txNew.vin.resize(1);
     txNew.vout.resize(1);  //<< CBigNum(++extra)  block.nBits  CBigNum(4)
-    txNew.vin[0].scriptSig = CScript() <<  CBigNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
+    txNew.vin[0].scriptSig = CScript() << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
     txNew.vout[0].nValue = 50 * COIN;
     txNew.vout[0].scriptPubKey = CScript() << ParseHex("0401f721b37aa5f3f03892e75d63908ac584a4caa2433594e5dab420e490cfc6634b8c48d449243e73fa7da698a7ee54114af9eb7a0f2bac4971ba257e69976238") << OP_CHECKSIG;
     block.vtx.push_back(txNew);
