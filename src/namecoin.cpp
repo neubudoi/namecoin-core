@@ -1738,7 +1738,7 @@ bool GenesisBlock(CBlock& block, int extra)
     printf("====================================\n");
     printf("Merkle: %s\n", block.hashMerkleRoot.GetHex().c_str());
     printf("Block: %s\n", block.GetHash().GetHex().c_str());
-    assert(block.hashMerkleRoot == uint256("0x1d89f47f1e5b84e8b78ef2f5e38defad5e54d0b08fbc5f17a1ba5b38afb76d7b"));            
+    //assert(block.hashMerkleRoot == uint256("0x1d89f47f1e5b84e8b78ef2f5e38defad5e54d0b08fbc5f17a1ba5b38afb76d7b"));            
     block.print();
     assert(block.GetHash() == hashGenesisBlock);
 
@@ -1758,7 +1758,7 @@ int CNamecoinHooks::LockinHeight()
     if (fTestNet)
         return 0;
 
-    return 18940;
+    return 0;//TODO 18940;
 }
 
 bool CNamecoinHooks::Lockin(int nHeight, uint256 hash)
