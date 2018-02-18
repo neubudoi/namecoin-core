@@ -349,9 +349,9 @@ double GetDifficulty()
     // Floating point number that is a multiple of the minimum difficulty,
     // minimum difficulty = 1.0.
 
-    if (pindexBest == NULL)
+    //if (pindexBest == NULL)
         return 1.0;
-    int nShift = (pindexBest->nBits >> 24) & 0xff;
+ /*   int nShift = (pindexBest->nBits >> 24) & 0xff;
 
     double dDiff =
         (double)0x0000ffff / (double)(pindexBest->nBits & 0x00ffffff);
@@ -367,7 +367,7 @@ double GetDifficulty()
         nShift--;
     }
 
-    return dDiff;
+    return dDiff;*/
 }
 
 Value getdifficulty(const Array& params, bool fHelp)

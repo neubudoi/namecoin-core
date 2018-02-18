@@ -5,3 +5,6 @@ src/bitcoind
 .*.swp
 *.*~*
 src/namecoind
+.cproject
+.project
+.settings/
