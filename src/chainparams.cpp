@@ -181,8 +181,9 @@ public:
 
         bech32_hrp = "nc";
 
-        vFixedSeeds.clear(); //!< DoiCoin doesn't have any fixed seeds yet!
-        //vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
+        vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
+        //vFixedSeeds.clear(); //!< DoiCoin doesn't have any fixed seeds yet!
+
 
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
