@@ -40,7 +40,7 @@ QString BitcoinUnits::longName(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("NMC");
+    case BTC: return QString("DOI");
     case mBTC: return QString("mNMC");
     case uBTC: return QString::fromUtf8("µNMC");
     default: return QString("???");
