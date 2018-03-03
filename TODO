@@ -1,21 +1,31 @@
-* implement proper size computation for name cache
 
-* upgrade to new version at fixed height:
-  - P2SH as enforced soft fork (BIP16)
-  - strict BIP30 as enforced soft fork
-  - allow larger blocks (DB locks)
-  - no need to disallow auxpow parent blocks with auxpow-flag in the version
-    any more; instead, the auxpow is simply never loaded for them
-  - disallow legacy blocks also on testnet
-  - restrict auxpow size / coinbase tx size?
-  - name_new format change?
-  - make NamecoinTxVersion a flag / irrelevant
-  - more differences???
+Todos:
+high priority
 
-* reenable some of the disabled tests, new alert keys?
 
-* make dust spam unspendable?
+medium priority
+* change nodes_main.txt
+* disable IRC for namecoin node discovery
 
-* dropexpirednames=1 to also remove expired names from the name database?
+low priority
+* improve README
+* add travis build and mention it on README
 
-* simplify regtests with reduced number of nodes?
+Done:
+* removed checkpoints in chainparams.cpp
+* changes for genesis block in chainparams.cpp
+	* changed ScriptPubKey to 410401f721b37aa5f3f03892e75d63908ac584a4caa2433594e5dab420e490cfc6634b8c48d449243e73fa7da698a7ee54114af9eb7a0f2bac4971ba257e69976238ac
+	* changed nTime to 1518766732
+	* change nNonce to 3223814536
+	* change nBits to 0x1c007fff
+	* changed genesis hash to 0x758953c4f3f7f25d007ab42d2972b3cd1cfe7e666cd5b35927d8b3e3da338bcf
+	* changed merkle root to 0xad2bd6d26ebc121e0d4258224ef1936fad5f0d13b7100ea1e6da9c053f39e513
+
+Later Changes:
+* in chainparams.cpp 
+	- correct chaninTxData 0,0,0
+	- add vFixedSeeds in 168 
+	- add vSeeds in 169 
+Vulnerabilities
+* merkle.cpp
+
