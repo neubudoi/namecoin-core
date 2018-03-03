@@ -103,7 +103,7 @@ public:
         // FIXME: Activate BIP16 with a softfork.
         consensus.BIP16Height = 0;
         consensus.BIP34Height = 100000000;
-        consensus.BIP34Hash =  uint256();
+        consensus.BIP34Hash =  uint256("0x758953c4f3f7f25d007ab42d2972b3cd1cfe7e666cd5b35927d8b3e3da338bcf");
         consensus.BIP65Height = 130000;
         consensus.BIP66Height = 130000;
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
